@@ -98,9 +98,11 @@ class Prompt {
         string comando1="sudo iptables -A OUTPUT -d "+ip+" -p tcp -j DROP";
         string comando2="sudo iptables -I INPUT -p tcp  -s  "+ip+" -m state --state NEW -j DROP";
         string comando3="sudo service iptables save";
+        string comando4="sudo iptables -L";
         system(comando1.c_str());
         system(comando2.c_str());
         system(comando3.c_str());
+        system(comando4.c_str());
         cout << ip << " bloqueado pra sempre!"<<endl;
     }
 
